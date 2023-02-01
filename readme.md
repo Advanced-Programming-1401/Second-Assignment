@@ -16,16 +16,17 @@ In this assignment, you will build a simple Java application that connects to a 
 - Maven or Gradle
 
 ## Tasks
-1. Fork this repository and clone the fork to your local machine
-2. Create a Java project using Maven or Gradle
-3. Add org.json to Gradle `build.gradle` file to include the JSON library
+1. Get an API key from `https://www.weatherapi.com/`. You need to sign up and verify your account.
+2. Fork this repository and clone the fork to your local machine
+3. Create a Java project using Maven or Gradle
+4. Add org.json to Gradle `build.gradle` file to include the JSON library
 
-4. Write a Java class `WeatherApp` that does the following:
+5. Write a Java class `WeatherApp` that does the following:
     - Prompts the user for a city name
     - Parses the JSON response to extract the temperature and humidity
     - Prints the temperature and humidity to the console
 
-5. Commit your changes and push them to your fork on Github
+6. Commit your changes and push them to your fork on Github
 
 ## Evaluation
 - Your code should compile and run without any errors

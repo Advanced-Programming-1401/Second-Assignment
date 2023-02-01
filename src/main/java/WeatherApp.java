@@ -6,9 +6,11 @@ import org.json.JSONObject;
 import java.util.Scanner;
 
 public class WeatherApp {
-    public final static String apiKey = "bbb85382b7a54668a24193127230102";
+    // Copy your API-KEY here
+    public final static String apiKey = "API-KEY";
+    // To Do: Write main function
     public static void main(String[] args) {
-        // Main function
+
     }
 
     /**
@@ -36,14 +38,14 @@ public class WeatherApp {
         }
     }
 
+    // To Do: Write getTemperature function returns celsius temperature of city by given json string
     public static double getTemperature(String weatherJson){
-        // This function returns celsius temperature of city by given json string
         double answer = 0.0;
         return answer;
     }
 
-    public static int humidity(String weatherJson){
-        // This function returns humidity percentage of city by given json string
+    // To Do: Write getHumidity function returns humidity percentage of city by given json string
+    public static int getHumidity(String weatherJson){
         int answer = 0;
         return answer;
     }
