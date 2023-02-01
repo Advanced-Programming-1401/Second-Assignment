@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class WeatherApp {
     // Copy your API-KEY here
     public final static String apiKey = "API-KEY";
-    // To Do: Write main function
+    // TODO: Write main function
     public static void main(String[] args) {
 
     }
@@ -38,13 +38,13 @@ public class WeatherApp {
         }
     }
 
-    // To Do: Write getTemperature function returns celsius temperature of city by given json string
+    // TODO: Write getTemperature function returns celsius temperature of city by given json string
     public static double getTemperature(String weatherJson){
         double answer = 0.0;
         return answer;
     }
 
-    // To Do: Write getHumidity function returns humidity percentage of city by given json string
+    // TODO: Write getHumidity function returns humidity percentage of city by given json string
     public static int getHumidity(String weatherJson){
         int answer = 0;
         return answer;

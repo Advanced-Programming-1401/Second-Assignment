@@ -31,7 +31,7 @@ In this assignment, you will build a simple Java application that connects to a 
 ## Evaluation
 - Your code should compile and run without any errors
 - Your code should correctly retrieve and display the temperature and humidity for a given city
-- Your code should be well-organized, readable, and properly commented
+- Your code should be well-organized, readable, properly commented and follows clean code principles
 - You should use Git for version control and include meaningful commit messages
 
 ## Bonus
