@@ -18,7 +18,7 @@ In this assignment, you will build a simple Java application that connects to a 
 
 ## Tasks
 1. Get an API key from https://www.weatherapi.com/. You need to sign up and verify your account.
-2. Fork this repository and clone the fork to your local machine. Ensure the repository's visibility is set to Private in the settings tab.
+2. Fork this repository and clone the fork to your local machine.
 3. Create a new Git branch and switch to it (branch name: develop)
 4. Add a the org.json package (or any other JSON library that you plan to use) to Gradle. You must include the necessary code in the dependencies section of the `build.gradle` file to import the JSON library. Be sure to check https://www.mvnrepository.com/ for more information.
 
@@ -57,6 +57,6 @@ In this assignment, you will build a simple Java application that connects to a 
 - Push your code to your fork on Github
 - Upload your report as a PDF file to your fork on GitHub
 
-The deadline for submitting your code is monday, February 27 (8th of Esfand). Any commits made after this date will not affect your score.
+The deadline for submitting your code is wednesday, March 1 (10th of Esfand). Any commits made after this date will not affect your score.
 
 Good luck and happy coding!
