@@ -13,14 +13,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation 'org.json:json:20220320'
-    implementation 'org.openjfx:javafx:21-ea+5'
-    implementation 'org.openjfx:javafx-controls:11'
-    implementation group: 'org.openjfx', name: 'javafx', version: '11', ext: 'pom'
-    implementation group: 'org.openjfx', name: 'javafx', version: '21-ea+5', ext: 'pom'
-
 
 }
-
 test {
     useJUnitPlatform()
 }
