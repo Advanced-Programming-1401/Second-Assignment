@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import java.util.Scanner;
 
 public class WeatherApp {
-    // Copy your API-KEY here
+    c3c9dd1e2b7749bab87141259232502
     public final static String apiKey = "API-KEY";
     // TODO: Write main function
     public static void main(String[] args) {
