@@ -15,7 +15,7 @@ public class WeatherApp {
         String json = getWeatherData(city);
         printTemp(getTemperatureC(json),getTemperatureF(json),city);
         printHumidity(getHumidity(json),city);
-        printWindSpeed(getWindSpeedKph(json),getWindSpeedMph(json),city);
+        printWindSpeedAndDirec(getWindSpeedKph(json),getWindSpeedMph(json),getWindDirec(json),city);
     }
     /**
      * Retrieves weather data for the specified city.
@@ -76,7 +76,12 @@ public class WeatherApp {
         double answer = json.getJSONObject("current").getDouble("wind_mph");
         return answer;
     }
-    public static void printWindSpeed(double kph,double mph, String city){
-        System.out.println(city + "'s current wind speed is " + kph + " kph and " + mph + " mph" );
+    public static String getWindDirec(String weatherJson){
+        JSONObject json = new JSONObject(weatherJson);
+        String answer = json.getJSONObject("current").getString("wind_dir");
+        return answer;
+    }
+    public static void printWindSpeedAndDirec(double kph,double mph,String direc, String city){
+        System.out.println(city + "'s current wind speed is " + kph + " kph and " + mph + " mph and wind Direction is " + direc );
     }
 }
