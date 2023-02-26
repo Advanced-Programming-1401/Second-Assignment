@@ -12,10 +12,10 @@ public class WeatherApp {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String city = input.next();
-
-        printTemp(getTemperatureC(getWeatherData(city)),getTemperatureF(getWeatherData(city)),city);
-        printHumidity(getHumidity(getWeatherData(city)),city);
-        System.out.println();
+        String json = getWeatherData(city);
+        printTemp(getTemperatureC(json),getTemperatureF(json),city);
+        printHumidity(getHumidity(json),city);
+        printWindSpeed(getWindSpeedKph(json),getWindSpeedMph(json),city);
     }
     /**
      * Retrieves weather data for the specified city.
@@ -54,16 +54,29 @@ public class WeatherApp {
         return answer;
     }
     public static void printTemp(double temperatureC,double tempretureF, String city){
-        System.out.println(city + "'s current Temperature is " + temperatureC + "Celsius and" + tempretureF + "Fahrenheit");
+        System.out.println(city + "'s current Temperature is " + temperatureC + " Celsius and " + tempretureF + " Fahrenheit");
     }
-
     // TODO: Write getHumidity function returns humidity percentage of city by given json string
     public static int getHumidity(String weatherJson){
         JSONObject json = new JSONObject(weatherJson);
         int answer = json.getJSONObject("current").getInt("humidity");
         return answer;
     }
-    public static void printHumidity(Object humidity, String city){
+    public static void printHumidity(int humidity, String city){
         System.out.println(city + "'s current Humidity is " + humidity);
+    }
+    //Bonus part
+    public static double getWindSpeedKph(String weatherJson){
+        JSONObject json = new JSONObject(weatherJson);
+        double answer = json.getJSONObject("current").getDouble("wind_kph");
+        return answer;
+    }
+    public static double getWindSpeedMph(String weatherJson){
+        JSONObject json = new JSONObject(weatherJson);
+        double answer = json.getJSONObject("current").getDouble("wind_mph");
+        return answer;
+    }
+    public static void printWindSpeed(double kph,double mph, String city){
+        System.out.println(city + "'s current wind speed is " + kph + " kph and " + mph + " mph" );
     }
 }
