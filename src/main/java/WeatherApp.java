@@ -7,10 +7,19 @@ import java.util.Scanner;
 
 public class WeatherApp {
     // Copy your API-KEY here
-    public final static String apiKey = "API-KEY";
+    public final static String apiKey = "11d6d7ae006f4890994141146232602";
     // TODO: Write main function
     public static void main(String[] args) {
-
+    Scanner input = new Scanner(System.in);
+    String city = input.nextLine();
+    if (getWeatherData(city) != null)
+    {
+        callAllFunctions(city);
+    }
+    else
+    {
+        System.out.print("Location is INVALID!");
+    }
     }
 
     /**
@@ -33,20 +42,69 @@ public class WeatherApp {
             reader.close();
             return stringBuilder.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             return null;
         }
     }
 
-    // TODO: Write getTemperature function returns celsius temperature of city by given json string
+    public static String currentLocation(String weatherJson)
+    {
+        JSONObject json = new JSONObject(weatherJson);
+        String regin;
+        regin = json.getJSONObject("location").getString("region");
+        return regin;
+    }
+
+    public static String localTime(String weatherJson)
+    {
+        JSONObject json = new JSONObject(weatherJson);
+        String local_time;
+        local_time = json.getJSONObject("location").getString("localtime");
+        return local_time;
+    }
+
     public static double getTemperature(String weatherJson){
+        JSONObject json = new JSONObject(weatherJson);
         double answer = 0.0;
+        answer = json.getJSONObject("current").getDouble("temp_c");
         return answer;
     }
 
-    // TODO: Write getHumidity function returns humidity percentage of city by given json string
     public static int getHumidity(String weatherJson){
+        JSONObject json = new JSONObject(weatherJson);
         int answer = 0;
+        answer = json.getJSONObject("current").getInt("humidity");
         return answer;
+    }
+
+    public static double windSpeed(String weatherJson)
+    {
+        JSONObject json = new JSONObject(weatherJson);
+        double wind_speed;
+        wind_speed = json.getJSONObject("current").getDouble("wind_kph");
+        return wind_speed;
+    }
+
+    public static String windDirection(String weatherJson)
+    {
+        JSONObject json = new JSONObject(weatherJson);
+        String wind_dir;
+        wind_dir = json.getJSONObject("current").getString("wind_dir");
+        return wind_dir;
+    }
+
+    public static void callAllFunctions(String city)
+    {
+        String weatherData      = getWeatherData(city);
+        String current_location = currentLocation(weatherData);
+        String local_time       = localTime(weatherData);
+        double Temperature      = getTemperature(weatherData);
+        int Humidity            = getHumidity(weatherData);
+        double wind_speed       = windSpeed(weatherData);
+        String wind_direction   = windDirection(weatherData);
+
+        System.out.print("Current Location: " + current_location + "\n" + "Local Time: " + local_time + "\n"+
+                        "Temperature(Celsius): " + Temperature + "\n" + "Humidity: " + Humidity + "\n" +
+                        "Wind Speed(kph): " + wind_speed + "\n" + "Wind Direction: " + wind_direction);
     }
 }
