@@ -70,6 +70,14 @@ public class WeatherApp {
         return answer;
     }
 
+    public static double getFeelsLikeTem (String weatherJson)
+    {
+        JSONObject json = new JSONObject(weatherJson);
+        double feelsLikeTem = 0.0;
+        feelsLikeTem = json.getJSONObject("current").getDouble("feelslike_c");
+        return feelsLikeTem;
+    }
+
     public static int getHumidity(String weatherJson){
         JSONObject json = new JSONObject(weatherJson);
         int answer = 0;
@@ -77,15 +85,15 @@ public class WeatherApp {
         return answer;
     }
 
-    public static double windSpeed(String weatherJson)
+    public static double getWindSpeed(String weatherJson)
     {
         JSONObject json = new JSONObject(weatherJson);
-        double wind_speed;
+        double wind_speed = 0.0;
         wind_speed = json.getJSONObject("current").getDouble("wind_kph");
         return wind_speed;
     }
 
-    public static String windDirection(String weatherJson)
+    public static String getWindDirection(String weatherJson)
     {
         JSONObject json = new JSONObject(weatherJson);
         String wind_dir;
@@ -99,12 +107,13 @@ public class WeatherApp {
         String current_location = currentLocation(weatherData);
         String local_time       = localTime(weatherData);
         double Temperature      = getTemperature(weatherData);
+        double feels_like       = getFeelsLikeTem(weatherData);
         int Humidity            = getHumidity(weatherData);
-        double wind_speed       = windSpeed(weatherData);
-        String wind_direction   = windDirection(weatherData);
+        double wind_speed       = getWindSpeed(weatherData);
+        String wind_direction   = getWindDirection(weatherData);
 
         System.out.print("Current Location: " + current_location + "\n" + "Local Time: " + local_time + "\n"+
-                        "Temperature(Celsius): " + Temperature + "\n" + "Humidity: " + Humidity + "\n" +
+                        "Temperature(Celsius): " + Temperature + "\n" +  "Feels like(Celsius): " + feels_like + "\n" + "Humidity: " + Humidity + "\n" +
                         "Wind Speed(kph): " + wind_speed + "\n" + "Wind Direction: " + wind_direction);
     }
 }
