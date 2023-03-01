@@ -1,13 +1,16 @@
+import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.simple.parser.*;
 
-import java.awt.geom.QuadCurve2D;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.FileReader;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 import java.util.Scanner;
-//import org.json.simple.JSONObject;
-//import org.json.simple.JSONArray;
 
 public class WeatherApp {
     // Copy your API-KEY here
@@ -17,6 +20,23 @@ public class WeatherApp {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the name of the city");
         String cityName = scanner.next();
+
+        Object obj = null;
+        try {
+            obj = new JSONParser().parse(new FileReader("Second-Assignment/Json-Files/Cities.json"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+        String allCityNames = obj.toString();
+
+        while (!isCityNameValid(allCityNames, cityName)){
+            System.out.println("City name entered is not valid, try again");
+            cityName = scanner.next();
+        }
+
 
         String weatherJson = getWeatherData(cityName);
         double temperature = getTemperature(weatherJson);
@@ -49,12 +69,24 @@ public class WeatherApp {
             }
             reader.close();
             return stringBuilder.toString();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            e.toString();
             return null;
         }
     }
 
+    public static boolean isCityNameValid(String allCityNames, String cityName){
+        JSONArray jsonArray = new JSONArray(allCityNames);
+
+        for(int i = 0; i < jsonArray.length(); i++){
+            JSONObject objects = jsonArray.getJSONObject(i);
+            String name = objects.getString("name");
+            if(name.equals(cityName)){
+                return true;
+            }
+        }
+        return false;
+    }
     // TODO: Write getTemperature function returns celsius temperature of city by given json string
     public static double getTemperature(String weatherJson){
         double answer = 0.0;
