@@ -17,26 +17,18 @@ public class WeatherApp {
     public final static String apiKey = "1e99e23b3ace45ccac532103232602";
     // TODO: Write main function
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Please enter the name of the city");
+
         String cityName = scanner.next();
-
-        Object obj = null;
-        try {
-            obj = new JSONParser().parse(new FileReader("Second-Assignment/Json-Files/Cities.json"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-
-        String allCityNames = obj.toString();
+        String allCityNames = jsonFileReader();
 
         while (!isCityNameValid(allCityNames, cityName)){
             System.out.println("City name entered is not valid, try again");
             cityName = scanner.next();
         }
-
 
         String weatherJson = getWeatherData(cityName);
         double temperature = getTemperature(weatherJson);
@@ -56,6 +48,33 @@ public class WeatherApp {
      * @param city the name of the city for which weather data should be retrieved
      * @return a string representation of the weather data, or null if an error occurred
      */
+    public static String jsonFileReader(){
+        Object obj = null;
+        try {
+            obj = new JSONParser().parse(new FileReader("Second-Assignment/Json-Files/Cities.json"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        String allCityNames = obj.toString();
+
+        return allCityNames;
+    }
+
+    public static boolean isCityNameValid(String allCityNames, String cityName){
+        JSONArray jsonArray = new JSONArray(allCityNames);
+
+        for(int i = 0; i < jsonArray.length(); i++){
+            JSONObject objects = jsonArray.getJSONObject(i);
+            String name = objects.getString("name");
+            if(name.equals(cityName)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static String getWeatherData(String city) {
         try {
             URL url = new URL("http://api.weatherapi.com/v1/current.json?key=" + apiKey + "&q=" + city);
@@ -73,19 +92,6 @@ public class WeatherApp {
             e.toString();
             return null;
         }
-    }
-
-    public static boolean isCityNameValid(String allCityNames, String cityName){
-        JSONArray jsonArray = new JSONArray(allCityNames);
-
-        for(int i = 0; i < jsonArray.length(); i++){
-            JSONObject objects = jsonArray.getJSONObject(i);
-            String name = objects.getString("name");
-            if(name.equals(cityName)){
-                return true;
-            }
-        }
-        return false;
     }
     // TODO: Write getTemperature function returns celsius temperature of city by given json string
     public static double getTemperature(String weatherJson){
