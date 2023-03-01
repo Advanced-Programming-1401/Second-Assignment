@@ -15,7 +15,7 @@ public class WeatherApp {
     public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     System.out.println("Please enter the city name: ");
-    String city = JOptionPane.showInputDialog("Please Enter the city name: ");
+    String city = JOptionPane.showInputDialog("Please Enter the city name: "); // getting input from user in a graphical panel
     if (getWeatherData(city) != null)
     {
         callAllFunctions(city);
@@ -259,7 +259,6 @@ public class WeatherApp {
         double wind_speed       = getWindSpeed(weatherData);
         String wind_direction   = getWindDirection(weatherData);
 
-        //
         currentLocationGUI  (current_location, frame);
         localTimeGUI        (local_time, frame);
         temperatureGUI      (Temperature, frame);
@@ -267,7 +266,7 @@ public class WeatherApp {
         humidityGUI         (Humidity, frame);
         windSpeedGUI        (wind_speed, frame);
         windDirectionGUI    (wind_direction, frame);
-        frame.setVisible(true);
+        frame.setVisible(true); // makes frame visible
     }
 
     public static void invalidInput()
