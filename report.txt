@@ -1,0 +1,14 @@
+apikey ro az site gofte shode dar file readme bardashtim va dar string apiKey gozashtim
+yek string be nam e city tarif kardim va un ro az karbar daryaft mikonim
+string city ro be method getWeatherData pass midim va khuruji in method ro dakhele string weatherData mirizim
+method getWeatherData az targih api etelaati daryaft mikone va be ma khuruji mide ke json hastesh va ma bayad ba estefade az tavabe mojud dar library json in etelaat ro estekhraj konim ke inkar tavasot method haye getTemperature , getHumidity , getWindSpeed va getWindDirection anjam mishe
+json mesle hashmap daraye key va value hastesh
+ma dar hameye tavabe getTemperature , getHumidity , getWindSpeed va getWindDirection miaim ba estefade az tavabe ketabkhune json etelaate morede nazar ro daryaft mikonim
+dar method getTemperature ma yek answer tarif mikonim ke az jense double hast
+dar vaghe in answer ke khurujie tabe hastesh temperatue shahre morede nazare karbar hastesh
+ma yek jsonobject be nam e data tarif mikonim va ba estefade az tavabe ketabkhune json temperature shahre morede nazare karbar ro dakhele answer mirizim va dar nahayat answer ro return mikonim
+baraye baghie tavabe getHumidiy , getWindSpeed va getWindDirection ham be hamin surat amal mikonim
+dar hameye tavabe getTemperature , getHumidity , getWindSpeed va getWindDirection az data.getJSONObject().getStirng() estefade kardim
+ke ebarat haye dakhele parantez key hastand va code [ data.getJSONObject().getStirng()().getStirng() ] value morede nazare ma ro return mikone
+ma khurujie tavabe neveshte shode ro dar moteghayer hayi ba esm moshabeh be tabe nazir khodeshun rikhtim va dar nahayat chap kardim
+
