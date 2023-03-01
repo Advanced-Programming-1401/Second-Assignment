@@ -80,7 +80,7 @@ public class WeatherApp {
                     pic.add(l7);
                     JLabel l8 = new JLabel(String.valueOf(getTemperature(Wind_Speed)));
                     pic.add(l8);
-                    JLabel l9 = new JLabel(" m/s      ");
+                    JLabel l9 = new JLabel(" km/h      ");
                     pic.add(l9);
 
                     JLabel l10 = new JLabel("Wind Direction : ");
