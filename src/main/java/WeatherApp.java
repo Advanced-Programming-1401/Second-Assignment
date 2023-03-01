@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Objects;
-
 import org.json.JSONObject;
 import javax.swing.*;   //  I Called it to use simple GUI
+
 public class WeatherApp {
     static JFrame pic;
     public final static String apiKey = "253fe6e8f2bd47cf97745159232502";   //  <--- Copy of API_KEY
