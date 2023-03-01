@@ -11,4 +11,6 @@ in this assignment we write a program to first get a city name from the user and
 - In the main function we use Scanner function to get the city from the user.
 - and then show the data that we get on the next 4 lines.
 
-
+## Conlusion
+We used Json and API in this program to get data throw website and show them on the terminal 
+User give us a name of a city and we show some weather data of that city.
