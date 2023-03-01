@@ -14,7 +14,7 @@ And the job of these function are to return string to Integer or double. (For pr
 ## Features
    **Examples :**
 
-known City --->[![Screenshot-2023-03-01-at-10-32-45.png](https://i.postimg.cc/Rhyhrj0n/Screenshot-2023-03-01-at-10-32-45.png)](https://postimg.cc/XBK4d1dV)[![Screenshot-2023-03-01-at-10-33-21.png](https://i.postimg.cc/cHWf2tzN/Screenshot-2023-03-01-at-10-33-21.png)](https://postimg.cc/8FyFrcDy)
+known City --->[![Screenshot-2023-03-01-at-10-32-45.png](https://i.postimg.cc/Rhyhrj0n/Screenshot-2023-03-01-at-10-32-45.png)](https://postimg.cc/XBK4d1dV)[![Screenshot-2023-03-01-at-20-46-30.png](https://i.postimg.cc/GmwJ1BHT/Screenshot-2023-03-01-at-20-46-30.png)](https://postimg.cc/LnDZt8km)
 
 Unknown City --->
 [![Screenshot-2023-03-01-at-10-50-32.png](https://i.postimg.cc/90gVRSwF/Screenshot-2023-03-01-at-10-50-32.png)](https://postimg.cc/gLh11gKf)
