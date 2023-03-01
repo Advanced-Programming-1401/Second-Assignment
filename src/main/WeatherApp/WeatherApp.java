@@ -5,7 +5,7 @@ import java.net.URL;
 import org.json.JSONObject;
 import java.util.Scanner;
 
-public class MyClass {
+public class WeatherApp {
     // Copy your API-KEY here
     public final static String apiKey = "c3c9dd1e2b7749bab87141259232502";
     // TODO: Write main function
@@ -13,9 +13,7 @@ public class MyClass {
         Scanner sc = new Scanner(System.in);
         String city = sc.next();
 
-        //String json = getWeatherData(city);
-        String json = "{\"location\":{\"name\":\"Tehran\",\"region\":\"Tehran\",\"country\":\"Iran\",\"lat\":35.73,\"lon\":51.33,\"tz_id\":\"Asia/Tehran\",\"localtime_epoch\":1677678014,\"localtime\":\"2023-03-01 17:10\"},\"current\":{\"last_updated_epoch\":1677677400,\"last_updated\":\"2023-03-01 17:00\",\"temp_c\":18.0,\"temp_f\":64.4,\"is_day\":1,\"condition\":{\"text\":\"Sunny\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/113.png\",\"code\":1000},\"wind_mph\":2.2,\"wind_kph\":3.6,\"wind_degree\":10,\"wind_dir\":\"N\",\"pressure_mb\":1019.0,\"pressure_in\":30.09,\"precip_mm\":0.0,\"precip_in\":0.0,\"humidity\":13,\"cloud\":0,\"feelslike_c\":18.0,\"feelslike_f\":64.4,\"vis_km\":10.0,\"vis_miles\":6.0,\"uv\":5.0,\"gust_mph\":3.8,\"gust_kph\":6.1}}";
-
+        String json = getWeatherData(city);
         double temp_c = getTemperature(json);
         int humidity = getHumidity(json);
         double windspeed = getWindSpeed(json);
