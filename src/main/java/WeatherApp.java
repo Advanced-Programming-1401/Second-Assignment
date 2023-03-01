@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Objects;
+
 import org.json.JSONObject;
 import javax.swing.*;   //  I Called it to use simple GUI
 public class WeatherApp {
@@ -50,13 +52,14 @@ public class WeatherApp {
 
                 else {
 
-                    JSONObject WeatherJson = new JSONObject(getWeatherData(city));
+                    JSONObject WeatherJson = new JSONObject(Objects.requireNonNull(getWeatherData(city)));
 
                     //in this part I try to Show the weather's condition( Use it by JSON) --->
                     String Humid = Integer.toString(WeatherJson.getJSONObject("current").getInt("humidity"));
                     String Celsius_Temperature = Double.toString(WeatherJson.getJSONObject("current").getDouble("temp_c"));
                     String Wind_Speed = Double.toString(WeatherJson.getJSONObject("current").getDouble("wind_kph"));
                     String Wind_Direction = WeatherJson.getJSONObject("current").getString("wind_dir");
+                    System.out.println(getWeatherData(city));
 
                     //put the weathers condition to the page --->
                     JLabel l112 = new JLabel("Humid : ");
