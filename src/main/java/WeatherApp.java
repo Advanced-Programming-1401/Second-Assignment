@@ -5,12 +5,16 @@ import java.net.URL;
 import org.json.JSONObject;
 import java.util.Scanner;
 
+
+
 public class WeatherApp {
     // Copy your API-KEY here
-    public final static String apiKey = "API-KEY";
+    public final static String apiKey = "b36dc40757fb415fa35192654232602";
     // TODO: Write main function
     public static void main(String[] args) {
 
+
+        System.out.println("temperature : " + getTemperature(getWeatherData(city)));
     }
 
     /**
@@ -41,6 +45,8 @@ public class WeatherApp {
     // TODO: Write getTemperature function returns celsius temperature of city by given json string
     public static double getTemperature(String weatherJson){
         double answer = 0.0;
+        JSONObject tem = new JSONObject(String weatherJson);
+        answer = tem.getJSONObject("current").getDouble("temp_c");
         return answer;
     }
 
