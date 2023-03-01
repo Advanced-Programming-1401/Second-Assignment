@@ -18,14 +18,12 @@ public class WeatherApp {
         System.out.println("Humidity is : "+ getHumidity(getWeatherData(city)));
         System.out.println("Wind speeed in kph is :" + getWind(getWeatherData(city)));
         System.out.println("Wind direction is : " + getWindDirection(getWeatherData(city)));
+        if (getWeatherData(city) == null) {
+            System.out.println("wrong name!");
+        }
     }
 
-    /**
-     * Retrieves weather data for the specified city.
-     *
-     * @param city the name of the city for which weather data should be retrieved
-     * @return a string representation of the weather data, or null if an error occurred
-     */
+
     public static String getWeatherData(String city) {
         try {
             URL url = new URL("http://api.weatherapi.com/v1/current.json?key=" + apiKey + "&q=" + city);
@@ -45,7 +43,7 @@ public class WeatherApp {
         }
     }
 
-    // TODO: Write getTemperature function returns celsius temperature of city by given json string
+
     public static double getTemperature(String weatherJson){
         double answer = 0.0;
         JSONObject tem = new JSONObject(weatherJson);
@@ -53,7 +51,6 @@ public class WeatherApp {
         return answer;
     }
 
-    // TODO: Write getHumidity function returns humidity percentage of city by given json string
     public static int getHumidity(String weatherJson){
         int answer = 0;
         JSONObject humidity = new JSONObject(weatherJson);
