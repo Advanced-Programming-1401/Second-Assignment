@@ -6,4 +6,4 @@ At first the city's name is passed to the getWeatherData method and it returns a
 ## Testing and Evaluation
 To make sure the program works properly, I checked the results with the correct weather information of that city.
 ## Conclusion
-This assignment helped me to lean how to use JSON objects.
+This assignment helped me to learn how to use JSON objects.
