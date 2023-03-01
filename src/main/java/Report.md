@@ -24,4 +24,4 @@ and it returned its temperature and humidity as output.
 and it was beautiful and simple and of course practical.
 - Actually , I don't see any strong point because I didn't do anything special,
 but there was a lot of way to improve the solution and increase its strengths.
-Hopefully next time!
+next time Inshallah!
