@@ -60,7 +60,6 @@ public class WeatherApp {
                     String Wind_Speed = Double.toString(WeatherJson.getJSONObject("current").getDouble("wind_kph"));
                     String Wind_Direction = WeatherJson.getJSONObject("current").getString("wind_dir");
                     
-
                     //put the weathers condition to the page --->
                     JLabel l112 = new JLabel("Humid : ");
                     pic.add(l112);
