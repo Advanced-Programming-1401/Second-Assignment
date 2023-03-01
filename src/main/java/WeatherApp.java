@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class WeatherApp {
     public final static String apiKey = "197c936379844258894151857230103";
 
-    // TODO: Write main function
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Please enter the city name :");
