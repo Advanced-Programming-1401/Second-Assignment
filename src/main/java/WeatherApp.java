@@ -13,25 +13,19 @@ public class WeatherApp {
     public final static String apiKey = "11d6d7ae006f4890994141146232602";
     // TODO: Write main function
     public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
-    System.out.println("Please enter the city name: ");
-    String city = JOptionPane.showInputDialog("Please Enter the city name: "); // getting input from user in a graphical panel
-    if (getWeatherData(city) != null)
-    {
-        callAllFunctions(city);
-    }
-    else
-    {
-        invalidInput();
-    }
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter the city name: ");
+        String city = JOptionPane.showInputDialog("Please Enter the city name: "); // getting input from user in a graphical panel
+        if (getWeatherData(city) != null)
+        {
+            callAllFunctions(city);
+        }
+        else
+        {
+            invalidInput();
+        }
     }
 
-    /**
-     * Retrieves weather data for the specified city.
-     *
-     * @param city the name of the city for which weather data should be retrieved
-     * @return a string representation of the weather data, or null if an error occurred
-     */
     public static String getWeatherData(String city) {
         try {
             URL url = new URL("http://api.weatherapi.com/v1/current.json?key=" + apiKey + "&q=" + city);
