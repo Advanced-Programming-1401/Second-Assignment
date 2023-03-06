@@ -1,0 +1,20 @@
+Introduction:
+The assignment was to write a code that can get some data related to the weather of a city.
+The objectives were learning to work with git and using the json data in java and also using
+gradle or maven as package managers.
+Design and Implementation:
+In this assignment we first get the city name as a string and also get the api key from a site
+called weatherapi which shares info about the weather of the cities live.
+We use double for temperature and int for humidity.
+We pass the api key and city to the getWeatherData function which return a string in which there
+is information about the given city.
+Then we use JSONOBJECT to retrieve the data given by the server and use answer to return the number
+The biggest challenge was to work with the JSON and how to use it.
+Testing and Evaluation:
+The testing part was pretty straightforward because we knew we needed to get two numbers from the
+compiler and it worked as so.
+The only challenging part about the results was the time and how long it took for the server to
+respond. It sometimes took it several minutes to give an answer.
+Conclusion:
+The best thing about the assignment was learning to word with JSON and the most frustrating part
+was to work with git which I think a little more teaching would have been perfect.
