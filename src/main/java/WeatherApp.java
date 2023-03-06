@@ -19,7 +19,7 @@ public class WeatherApp {
         System.out.println("Wind speeed in kph is :" + getWind(getWeatherData(city)));
         System.out.println("Wind direction is : " + getWindDirection(getWeatherData(city)));
         if (getWeatherData(city) == null) {
-            System.out.println("wrong name!");
+            System.out.println("wrong name!!");
         }
     }
 
